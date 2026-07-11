@@ -402,6 +402,15 @@
       return;
     }
 
+    if(val < 0){
+  resultValue.textContent = '⚠ inválido';
+  resultUnit.textContent = 'pressão absoluta não pode ser negativa';
+  fromValue.style.borderColor = 'var(--danger)';
+  return;
+} else {
+  fromValue.style.borderColor = '';
+}
+
     const baseVal = UNITS[fKey].toBase(val);
     const converted = UNITS[tKey].fromBase(baseVal);
 
