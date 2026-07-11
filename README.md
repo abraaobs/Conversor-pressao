@@ -8,10 +8,8 @@ Conversor de pressão 100% client-side (HTML + CSS + JS puro), sem dependência 
 
 | Nome completo | Usuário GitHub |
 |---|---|
-| _(preencher)_ | _(preencher)_ |
-| _(preencher)_ | _(preencher)_ |
-
-> Preencha esta tabela antes do primeiro commit — a atividade exige associar claramente cada integrante ao seu usuário no GitHub.
+| Abraão Batista da Silva | [@abraaobs](https://github.com/abraaobs) |
+| Gabriel Roberto Xavier da Silva | [@xavierr-eng](https://github.com/xavierr-eng) |
 
 ## Como rodar
 
