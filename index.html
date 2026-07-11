@@ -397,10 +397,19 @@
     const fKey = fromUnit.value;
     const tKey = toUnit.value;
 
-    if(isNaN(val)){
-      resultValue.textContent = '—';
-      return;
-    }
+    if(fromValue.value.trim() === ''){
+  resultValue.textContent = '—';
+  resultUnit.textContent = 'digite um valor';
+  fromValue.style.borderColor = '';
+  return;
+}
+
+if(isNaN(val)){
+  resultValue.textContent = '—';
+  resultUnit.textContent = 'valor inválido';
+  fromValue.style.borderColor = 'var(--danger)';
+  return;
+}
 
     if(val < 0){
   resultValue.textContent = '⚠ inválido';
@@ -422,10 +431,12 @@
   }
 
   function formatNumber(n){
-    if(Math.abs(n) >= 1000) return n.toFixed(2);
-    if(Math.abs(n) >= 1) return parseFloat(n.toFixed(4)).toString();
-    return n.toExponential(3);
-  }
+  if(!isFinite(n)) return '—';
+  if(Math.abs(n) >= 1000000) return n.toExponential(3);
+  if(Math.abs(n) >= 1000) return n.toFixed(2);
+  if(Math.abs(n) >= 0.0001 || n === 0) return parseFloat(n.toFixed(4)).toString();
+  return n.toExponential(3);
+}
 
   function updateGauge(basePaValue){
     // Scale 0 -> 10 bar (in Pa) across the dial's -120deg..120deg sweep
